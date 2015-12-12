@@ -27,6 +27,22 @@ module.exports = {
 				});
 			},
 
+		edit: function(req, res){
+					Videos.findOne(req.param('id'), function(err, video){
+									res.view({
+										  displayVideo: video
+									})
+					});
+				},
+
+		update: function(req, res){
+				Videos.update(req.param('id'), req.params.all(), function(err, video){
+
+								res.redirect('/videos/show/'+req.param('id'));
+					});
+				},
+
+
 		show: function(req, res){
 					Videos.findOne(req.param('id'), function(err, video){
 									res.view({

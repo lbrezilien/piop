@@ -2,7 +2,7 @@
 
 
 <% for(video in allVideos) { %>
-  <li><%= allVideos[video].title %>  <button><a href="videos/show/<%= allVideos[video].id %>">show</a></button><button>edit</button>
+  <li><%= allVideos[video].title %>  <button><a href="videos/show/<%= allVideos[video].id %>">show</a></button><button><a href="/videos/edit/<%= allVideos[video].id %>">edit</a></button>
   <form method="POST" action="videos/destroy/<%= allVideos[video].id %>">
     <!-- <input type="hidden" name="_csrf" value="<%= _csrf %>"> -->
     <button type="submit">delete</button>

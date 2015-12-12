@@ -1,0 +1,20 @@
+THis is the Edit view
+
+<div class="container">
+<div class="col-xs-6">
+     <form method="POST" action="/videos/update/<%- displayVideo.id %>" class="form-signin">
+       <h2 class="form-signin-heading">Add your new video Here</h2>
+       <label for="title" class="sr-only">Title</label>
+       <input type="text" class="form-control" name="title" value="<%- displayVideo.title %>">
+       <label for="description" class="sr-only">description</label>
+       <input type="text" id="inputDescription" class="form-control" name="description" value="<%- displayVideo.description %>">
+      </input>
+      <label for="description" class="sr-only">URL</label>
+      <input type="text" id="inputUrl" class="form-control" name="url" value="<%- displayVideo.url %>">
+     </input>
+
+       <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Video</button>
+       <input type="hidden" name="_csrf" value="<%= _csrf %>">
+     </form>
+   </div>
+   </div> <!-- /container -->
