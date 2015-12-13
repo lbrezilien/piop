@@ -2,29 +2,7 @@
 
 <h1>Welcome to playitonpiano</h2>
 
-<div class="row">
-    <div class="col-xs-4 col-xs-offset-3">
-        <ul class="nav nav-pills">
-            <li><a href="/videos">Videos</a></li>
-            <li class="active"><a href="/sheets">Sheet Music</a></li>
-            <li class=""><a href="/about">About</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Filter <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" id="filterSelection">
-               <li><a>Rap</a></li>
-               <li><a>Rock</a></li>
-               <li><a>Classical</a></li>
-               <li><a>Acoustic</a></li>
-                <!-- <li class="divider"></li>
-                <li><a href="#">Separated link</a></li> -->
-              </ul>
-            </li>
-        </ul>
-      </div>
-</div>
-
+  <%- partial ('../nav/subnav.ejs') %>
 
     <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
@@ -51,9 +29,7 @@
                     </div>
 
                     <div class="row">
-                        <div id="genre" >
-                          <b>Genre:</b> <%= sheets[sheet].genre %>
-                        </div>
+                          <b>Genre:</b> <span class="genre"><%= sheets[sheet].genre %></span>
                     </div>
 
                 </div>
