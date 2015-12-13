@@ -1,25 +1,68 @@
 
 
 <h1>Welcome to playitonpiano</h2>
-This is the sheets page
+
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-3">
+        <ul class="nav nav-pills">
+            <li><a href="/videos">Videos</a></li>
+            <li class="active"><a href="/sheets">Sheet Music</a></li>
+            <li class=""><a href="/about">About</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Filter <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" id="filterSelection">
+               <li><a>Rap</a></li>
+               <li><a>Rock</a></li>
+               <li><a>Classical</a></li>
+               <li><a>Acoustic</a></li>
+                <!-- <li class="divider"></li>
+                <li><a href="#">Separated link</a></li> -->
+              </ul>
+            </li>
+        </ul>
+      </div>
+</div>
 
 
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+        <% for(sheet in sheets) { %>
+          <div class="row admin-rows">
+               <div class="row">
+                    <div id="title"  class="col-xs-12">
+                      <h5>  <%= sheets[sheet].title %> </h5>
+                        <hr>
+                    </div>
 
+                </div>
 
-<% for(sheet in sheets) { %>
-  <li><%= sheets[sheet].title %>  <button><a href="sheets/show/<%= sheets[sheet].id %>">show</a></button><button><a href="/sheets/edit/<%= sheets[sheet].id %>">edit</a></button>
-  <form method="POST" action="/sheets/destroy/<%= sheets[sheet].id %>">
-    <input type="hidden" name="_csrf" value="<%= _csrf %>">
-    <button type="submit">delete</button>
-  </li>
-<% } %>
+                <div class="row">
 
+                   <div class="col-xs-3 " >
+                      <a href="<%= sheets[sheet].url%>"><i class="fa fa-file-text fa-5x"></i> </a>
+                    </div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div id="artist"  >
+                          <b>Artist: <%= sheets[sheet].artist %> </b>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div id="genre" >
+                          <b>Genre:</b> <%= sheets[sheet].genre %>
+                        </div>
+                    </div>
 
-<!-- <% for(sheet in sheets) { %>
-  <li><%= sheets[sheet].title %>  <button><a href="sheets/show/<%= sheets[sheet].id %>">show</a></button><button><a href="/sheets/edit/<%= sheets[sheet].id %>">edit</a></button>
-  <form method="POST" action="/sheets/destroy/<%= sheets[sheet].id %>">
-    <input type="hidden" name="_csrf" value="<%= _csrf %>">
-    <button type="submit">delete</button>
-  </li>
-<% } %> -->
+                </div>
+                <hr>
+              </div>
+              <hr>
+          </div>
+
+        <% } %>
+          </div>
+
+      </div>

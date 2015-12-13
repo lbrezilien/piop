@@ -13,13 +13,13 @@ module.exports = {
         type: 'string'
       },
 
-      description: {
+      genre: {
         type: 'string'
       },
 
       url: {
         type: 'string'
       }
-  
+
   }
 };
