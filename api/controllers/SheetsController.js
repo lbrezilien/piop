@@ -22,6 +22,10 @@
  		 },
 
  		create: function(req, res){
+
+				// for(var x=0; x < 20; x++){
+				// 	Sheets.create(req.params.all(), function(err,sheet){})
+				// }
  				Sheets.create(req.params.all(), function(err, sheet){
  								res.redirect('/sheets/show/'+sheet.id);
  				});

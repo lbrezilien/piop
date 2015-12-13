@@ -12,11 +12,23 @@ module.exports = {
       type: 'string'
     },
 
+    artist: {
+      type: 'string'
+    },
+
+    genre: {
+      type: 'string'
+    },
+    
     description: {
       type: 'string'
     },
 
-    url: {
+    videoUrl: {
+      type: 'string'
+    },
+
+    thumbNail: {
       type: 'string'
     }
 

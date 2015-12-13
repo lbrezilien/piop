@@ -1,10 +1,125 @@
 <h1>Welcome to playitonpiano</h2>
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-3">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">Videos</a></li>
+            <li><a href="#">Sheet Music</a></li>
+            <li class="disabled"><a href="#">About</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Filter <span class="caret"></span>
+              </a>
+               <ul class="dropdown-menu">
+                <li><a href="#">Rap</a></li>
+                <li><a href="#">Rock</a></li>
+                <li><a href="#">Classical</a></li>
+                <!-- <li class="divider"></li>
+                <li><a href="#">Separated link</a></li> -->
+              </ul>
+            </li>
+        </ul>
+      </div>
+</div>
 
 
-<% for(video in allVideos) { %>
-  <li><%= allVideos[video].title %>  <button><a href="videos/show/<%= allVideos[video].id %>">show</a></button><button><a href="/videos/edit/<%= allVideos[video].id %>">edit</a></button>
-  <form method="POST" action="/videos/destroy/<%= allVideos[video].id %>">
-    <!-- <input type="hidden" name="_csrf" value="<%= _csrf %>"> -->
-    <button type="submit">delete</button>
-  </li>
-<% } %>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+        <% for(video in allVideos) { %>
+          <div class="row admin-rows">
+               <div class="row">
+                    <div id="title"  class="col-xs-12">
+                      <h5>  <%= allVideos[video].title %> </h5>
+                        <hr>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                   <div class="col-xs-3 video-icon" data-toggle="modal" data-target="#video<%= allVideos[video].id %>">
+                        <img src="<%= allVideos[video].thumbNail %>" width="100%">
+                    </div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div id="artist"  >
+                          <b>Artist: <%= allVideos[video].artist %> </b>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="description">
+                          <b> Description: </b> <%= allVideos[video].description %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="genre" >
+                          <b>Genre:</b> <%= allVideos[video].genre %>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+              </div>
+              <hr>
+          </div>
+
+
+          <div id="video<%= allVideos[video].id %>" class="modal" >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"> <%= allVideos[video].title %> </h4>
+                </div>
+                <div class="modal-body">
+                  <iframe width="95%" height="95%" src="<%= allVideos[video].videoUrl %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <% } %>
+          </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="row">
+    <% for(video in allVideos) { %>
+      <div class="row admin-rows">
+          <div class="col-xs-3">
+              <%= allVideos[video].title %>
+          </div>
+          <div class="col-xs-1">
+              <button><a href="videos/show/<%= allVideos[video].id %>">show</a></button>
+          </div>
+          <div class="col-xs-1">
+              <button><a href="/videos/edit/<%= allVideos[video].id %>">edit</a></button>
+          </div>
+
+          <div class="col-xs-1">
+              <form method="POST" action="/videos/destroy/<%= allVideos[video].id %>">
+                  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+                  <button type="submit">delete</button>
+              </form>
+          </div>
+
+      </div>
+    <% } %>
+</div> -->

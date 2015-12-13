@@ -1,10 +1,25 @@
+
+
 <h1>Welcome to playitonpiano</h2>
 This is the sheets page
+
+
+
 
 <% for(sheet in sheets) { %>
   <li><%= sheets[sheet].title %>  <button><a href="sheets/show/<%= sheets[sheet].id %>">show</a></button><button><a href="/sheets/edit/<%= sheets[sheet].id %>">edit</a></button>
   <form method="POST" action="/sheets/destroy/<%= sheets[sheet].id %>">
-    <!-- <input type="hidden" name="_csrf" value="<%= _csrf %>"> -->
+    <input type="hidden" name="_csrf" value="<%= _csrf %>">
     <button type="submit">delete</button>
   </li>
 <% } %>
+
+
+
+<!-- <% for(sheet in sheets) { %>
+  <li><%= sheets[sheet].title %>  <button><a href="sheets/show/<%= sheets[sheet].id %>">show</a></button><button><a href="/sheets/edit/<%= sheets[sheet].id %>">edit</a></button>
+  <form method="POST" action="/sheets/destroy/<%= sheets[sheet].id %>">
+    <input type="hidden" name="_csrf" value="<%= _csrf %>">
+    <button type="submit">delete</button>
+  </li>
+<% } %> -->

@@ -22,6 +22,9 @@ module.exports = {
 		 },
 
 		'create': function(req, res){
+				for(var x=0; x < 20; x++){
+						Videos.create({title: "A Thousand Years", artist: "Christina Peri", description:"playitonpiano original tutorial on how to play a thousand years by Christina Peri.", genre: "Acoustic", thumbNail: "http://img.youtube.com/vi/Y7Sg5W3XlXU/0.jpg", videoUrl:"https://www.youtube.com/embed/Y7Sg5W3XlXU?controls=0&amp;showinfo=0"}, function(err,sheet){})
+				}
 				Videos.create(req.params.all(), function(err, video){
 								res.redirect('/videos/show/'+video.id);
 				});
