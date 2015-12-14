@@ -33,7 +33,27 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': 'VideosController.index',
-  'GET /about': { view: 'about'}
+  'GET /about': { view: 'about'},
+
+
+  'GET /admin/sheets': 'AdminController.sheets',
+  'GET /admin/sheets/new': 'SheetsController.new',
+  'POST /admin/sheets/create': 'SheetsController.create',
+  'GET /admin/sheets/edit/:id': 'SheetsController.edit',
+  'POST /admin/sheets/destroy/:id': 'SheetsController.destroy',
+
+  'GET /admin/videos': 'AdminController.videos',
+  'GET /admin/videos/new': 'VideosController.new',
+  'POST /admin/videos/create': 'VideosController.create',
+  'GET /admin/videos/edit/:id': 'VideosController.edit',
+  'POST /admin/videos/destroy/:id': 'VideosController.destroy',
+
+
+
+
+
+
+
 
 
   /***************************************************************************

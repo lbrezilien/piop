@@ -1,0 +1,29 @@
+
+<%- partial ('../../nav/admin/adminnav.ejs') %>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre </th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% for(sheet in sheets) { %>
+        <tr>
+          <td><%= sheets[sheet].title %></td>
+          <td><%= sheets[sheet].genre %></td>
+          <td><button><a href="/admin/sheets/edit/<%= sheets[sheet].id %>">edit</a></button></td>
+          <td><form method="POST" action="/admin/sheets/destroy/<%= sheets[sheet].id %>">
+                  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+                  <button type="submit">delete</button>
+                </form>
+          </td>
+
+        </tr>
+      <% } %>
+  </tbody>
+</table>

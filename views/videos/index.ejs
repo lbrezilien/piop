@@ -1,8 +1,5 @@
-
-
-<h1>Welcome to playitonpiano</h2>
-
-
+<%- partial('../header/header.ejs') %>
+<hr>
   <%- partial ('../nav/subnav.ejs') %>
 
     <div class="row">
@@ -66,41 +63,3 @@
           </div>
 
       </div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- for the admin page -->
-
-<!--
-
-<div class="row">
-    <% for(video in allVideos) { %>
-      <div class="row admin-rows">
-          <div class="col-xs-3">
-              <%= allVideos[video].title %>
-          </div>
-          <div class="col-xs-1">
-              <button><a href="videos/show/<%= allVideos[video].id %>">show</a></button>
-          </div>
-          <div class="col-xs-1">
-              <button><a href="/videos/edit/<%= allVideos[video].id %>">edit</a></button>
-          </div>
-
-          <div class="col-xs-1">
-              <form method="POST" action="/videos/destroy/<%= allVideos[video].id %>">
-                  <input type="hidden" name="_csrf" value="<%= _csrf %>">
-                  <button type="submit">delete</button>
-              </form>
-          </div>
-
-      </div>
-    <% } %>
-</div> -->

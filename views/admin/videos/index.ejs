@@ -1,0 +1,29 @@
+
+<%- partial ('../../nav/admin/adminnav.ejs') %>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre </th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% for(video in videos) { %>
+        <tr>
+          <td><%= videos[video].title %></td>
+          <td><%= videos[video].genre %></td>
+          <td><button><a href="/admin/videos/edit/<%= videos[video].id %>">edit</a></button></td>
+          <td><form method="POST" action="/admin/videos/destroy/<%= videos[video].id %>">
+                  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+                  <button type="submit">delete</button>
+                </form>
+          </td>
+
+        </tr>
+      <% } %>
+  </tbody>
+</table>
