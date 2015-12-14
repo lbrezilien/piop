@@ -1,15 +1,37 @@
 <div class="container">
 <div class="col-xs-6">
-     <form method="POST" action="/videos/create" class="form-signin">
-       <h2 class="form-signin-heading">Add your new video Here</h2>
-       <label for="title" class="sr-only">Title</label>
-       <input type="text" class="form-control" name="title">
-       <label for="description" class="sr-only">description</label>
-       <input type="text" id="inputDescription" class="form-control" name="description">
+
+
+
+
+
+
+
+
+
+     <form method="POST" action="/admin/videos/create" class="form-signin">
+       <h2 class="form-signin-heading">Add a Video</h2>
+       <label for="title" ><b>Title:</b></label>
+       <input type="text" class="form-control" placeholder="Song Title" name="title" >
+
+       <label for="artist"><b>Atrist:</b></label>
+       <input type="text" placeholder="Artist" class="form-control" name="artist" >
       </input>
-      <label for="description" class="sr-only">URL</label>
-      <input type="text" id="inputUrl" class="form-control" name="url">
+
+      <label for="description" ><b>Description:</b></label>
+      <input type="text"  class="form-control" placeholder="Video Description" name="description" >
+
+      <label for="genre" ><b>Genre:</b></label>
+      <input type="text" placeholder="What Genre is this?" class="form-control" name="genre" >
      </input>
+
+     <label for="videoUrl" ><b>URL:</b></label>
+      <input type="text" placeholder="Video URL" class="form-control" name="videoUrl" >
+     </input>
+
+     <label for="thumbnail" ><b>Thumbnail:</b></label>
+     <input type="text" placeholder="Link a thumbnail" class="form-control" name="thumbNail" >
+    </input>
 
        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Video</button>
        <input type="hidden" name="_csrf" value="<%= _csrf %>">

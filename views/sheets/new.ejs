@@ -1,18 +1,24 @@
-<div class="container">
-<div class="col-xs-6">
-     <form method="POST" action="/admin/sheets/create" class="form-signin">
-       <h2 class="form-signin-heading">Add your new video Here</h2>
-       <label for="title" class="sr-only">Title</label>
-       <input type="text" class="form-control" name="title">
-       <label for="description" class="sr-only">description</label>
-       <input type="text" id="inputDescription" class="form-control" name="description">
-      </input>
-      <label for="description" class="sr-only">URL</label>
-      <input type="text" id="inputUrl" class="form-control" name="url">
-     </input>
 
-       <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Video</button>
-       <input type="hidden" name="_csrf" value="<%= _csrf %>">
-     </form>
-   </div>
-   </div> <!-- /container -->
+
+<div class="container">
+    <div class="col-xs-6">
+
+        <form method="POST" action="/admin/sheets/create" class="form-signin">
+              <h2 class="form-signin-heading">Add a Sheet</h2>
+              <label for="title" ><b>Title:</b></label>
+              <input type="text" class="form-control" placeholder="Song Title" name="title">
+              </input>
+
+             <label for="genre">Genre:</label>
+             <input type="text"  class="form-control" placeholder="What Genre is this?" name="genre">
+             </input>
+
+             <label for="url">Sheet URL:</label>
+             <input type="text" placeholder="Link the sheet" class="form-control" name="url">
+            </input>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Sheet</button>
+            <input type="hidden" name="_csrf" value="<%= _csrf %>">
+        </form>
+    </div>
+</div>
